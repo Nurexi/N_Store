@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Nure Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <!-- Header Section - Matching Main Page -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1 class="animated-logo">
+                    Nure <span class="stor" style="animation: colorChange 3s infinite;">Store</span>
+                </h1>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#products" class="nav-link">Products</a>
+                <a href="index.html#reviews-section" class="nav-link">Reviews</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="search-input" placeholder="Search for products...">
+                    <i class="fas fa-search search-icon" id="search-button"></i>
+                </div>
+            </div>
+            <div class="nav-icons">
+                <div class="cart-icon" id="open-cart">
+                    <a href="#" style="color: white; text-decoration: none;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section" id="cart-section">
+        <div class="container">
+            <div class="cart-header">
+                <h1 class="cart-title">
+                    <i class="fas fa-shopping-cart"></i>
+                    Your Shopping Cart
+                </h1>
+                <p class="cart-subtitle">Review your items and proceed to checkout</p>
+            </div>
+
+            <div class="cart-content">
+                <!-- Left Column - Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-items-header">
+                        <h2>Cart Items</h2>
+                        <button class="clear-cart-btn" id="clear-cart">
+                            <i class="fas fa-trash"></i> Clear Cart
+                        </button>
+                    </div>
+                    <div class="cart-items-container" id="cart-items">
+                        <!-- Cart items will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Right Column - Order Summary & Payment -->
+                <div class="checkout-section">
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h2 class="section-title">
+                            <i class="fas fa-receipt"></i>
+                            Order Summary
+                        </h2>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="shipping-cost">$9.99</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span id="tax-amount">$0.00</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row total-row">
+                            <span>Total:</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Payment Methods -->
+                    <div class="payment-methods-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-credit-card"></i>
+                            Payment Method
+                        </h2>
+                        
+                        <!-- Credit/Debit Card -->
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="credit-card" checked>
+                            <label for="credit-card">
+                                <div class="payment-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="payment-text">
+                                    <div class="payment-name">Credit/Debit Card</div>
+                                    <div class="payment-desc">Visa, Mastercard, American Express</div>
+                                </div>
+                                <div class="payment-logos">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fab fa-cc-amex"></i>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- PayPal -->
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="paypal">
+                            <label for="paypal">
+                                <div class="payment-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="payment-text">
+                                    <div class="payment-name">PayPal</div>
+                                    <div class="payment-desc">Pay securely with your PayPal account</div>
+                                </div>
+                                <div class="payment-security">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Credit Card Form -->
+                        <div class="credit-card-form" id="credit-card-form">
+                            <form id="payment-form">
+                                <div class="form-group">
+                                    <label for="card-number">
+                                        <i class="fas fa-credit-card"></i>
+                                        Card Number
+                                    </label>
+                                    <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-name">
+                                        <i class="fas fa-user"></i>
+                                        Cardholder Name
+                                    </label>
+                                    <input type="text" id="card-name" class="form-control" placeholder="John Doe">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">
+                                            <i class="fas fa-calendar"></i>
+                                            Expiry Date
+                                        </label>
+                                        <input type="text" id="card-expiry" class="form-control" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">
+                                            <i class="fas fa-lock"></i>
+                                            CVV
+                                        </label>
+                                        <input type="text" id="card-cvv" class="form-control" placeholder="123" maxlength="4">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- PayPal Email Form -->
+                        <div class="paypal-form" id="paypal-form" style="display: none;">
+                            <form id="paypal-payment-form">
+                                <div class="form-group">
+                                    <label for="paypal-email">
+                                        <i class="fas fa-envelope"></i>
+                                        PayPal Email Address
+                                    </label>
+                                    <input type="email" id="paypal-email" class="form-control" placeholder="your-email@example.com" required>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <button class="checkout-btn" id="checkout-btn">
+                        <i class="fas fa-lock"></i>
+                        Secure Checkout
+                        <span class="checkout-total">$0.00</span>
+                    </button>
+
+                    <!-- Security Badge -->
+                    <div class="security-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>256-bit SSL Encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Success Page -->
+    <section class="order-success-section" id="order-success-section" style="display: none;">
+        <div class="success-container">
+            <div class="success-animation">
+                <div class="checkmark-circle">
+                    <div class="checkmark"></div>
+                </div>
+            </div>
+            <h1 class="success-title">Order Successful!</h1>
+            <p class="success-message">Thank you for your purchase. Your order has been confirmed and will be processed shortly.</p>
+            <div class="success-details">
+                <div class="success-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>Confirmation email sent</span>
+                </div>
+                <div class="success-info">
+                    <i class="fas fa-truck"></i>
+                    <span>Estimated delivery: 3-5 business days</span>
+                </div>
+            </div>
+            <div class="redirect-info">
+                <p>Redirecting to homepage in <span id="countdown">3</span> seconds...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty Cart Template -->
+    <template id="empty-cart-template">
+        <div class="empty-cart">
+            <div class="empty-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>Your cart is empty</h3>
+            <p>Add some products to get started</p>
+            <a href="index.html" class="continue-shopping-btn">
+                <i class="fas fa-arrow-left"></i>
+                Continue Shopping
+            </a>
+        </div>
+    </template>
+
+    <!-- Cart Item Template -->
+    <template id="cart-item-template">
+        <div class="cart-item">
+            <div class="cart-item-img-container">
+                <img src="/placeholder.svg" alt="" class="cart-item-img">
+            </div>
+            <div class="cart-item-info">
+                <h3 class="cart-item-name"></h3>
+                <p class="cart-item-price"></p>
+                <div class="cart-item-quantity">
+                    <button class="quantity-btn decrease">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">1</span>
+                    <button class="quantity-btn increase">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cart-item-total">
+                <span class="item-total-price">$0.00</span>
+                <button class="remove-item">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notification-container"></div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

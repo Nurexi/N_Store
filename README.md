@@ -41,6 +41,12 @@ This project showcases a sleek online tech store with stunning visuals, smooth a
 | **Google Fonts** | Clean, modern typography                                      |
 | **Font Awesome** | Icons for navigation and UI elements                          |
 
+📃 License
+
+This project is licensed under the MIT License – free to use, modify, and distribute.
+
+✨ “Nure Store combines technology and design to create a premium shopping experience for every tech enthusiast.”
+
 ## 📂 Project Structure  
 
 ```plaintext

@@ -33,6 +33,13 @@ This project showcases a sleek online tech store with stunning visuals, smooth a
 - 📱 **Mobile-Friendly** – Optimized for all devices  
 
 ---
+| Technology       | Purpose                                                       |
+| ---------------- | ------------------------------------------------------------- |
+| **HTML5**        | Semantic structure and layout                                 |
+| **CSS3**         | Styling, animations, and transitions                          |
+| **JavaScript**   | DOM manipulation, cart system with `localStorage`, dynamic UI |
+| **Google Fonts** | Clean, modern typography                                      |
+| **Font Awesome** | Icons for navigation and UI elements                          |
 
 ## 📂 Project Structure  
 

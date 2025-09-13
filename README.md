@@ -1,4 +1,4 @@
-  # 🛒 Nure | Premium Tech Store  
+ # 🛒 Nure | Premium Tech Store  
 
 Welcome to **Nure Store** – a modern, stylish, and responsive **e-commerce website** built for premium tech lovers.  
 This project showcases a sleek online tech store with stunning visuals, smooth animations, and interactive features — all created using **HTML**, **CSS**, and **JavaScript**.  
